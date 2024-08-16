@@ -41,6 +41,7 @@ import type {
 } from 'types/api/address';
 import type { AddressesResponse } from 'types/api/addresses';
 import type { AddressMetadataInfo, PublicTagTypesResponse } from 'types/api/addressMetadata';
+import type { AdvancedFilterParams, AdvancedFilterResponse, AdvancedFilterMethodsResponse } from 'types/api/advancedFilter';
 import type {
   ArbitrumL2MessagesResponse,
   ArbitrumL2MessagesItem,
@@ -50,7 +51,6 @@ import type {
   ArbitrumL2BatchBlocks,
   ArbitrumL2TxnBatchesItem,
 } from 'types/api/arbitrumL2';
-import type { AdvancedFilterParams, AdvancedFilterResponse, AdvancedFilterMethodsResponse } from 'types/api/advancedFilter';
 import type { TxBlobs, Blob } from 'types/api/blobs';
 import type { BlocksResponse, BlockTransactionsResponse, Block, BlockFilters, BlockWithdrawalsResponse, BlockCountdownResponse } from 'types/api/block';
 import type { ChartMarketResponse, ChartSecondaryCoinPriceResponse, ChartTransactionResponse } from 'types/api/charts';
@@ -873,6 +873,7 @@ export const RESOURCES = {
     filterFields: [
       'tx_types' as const,
       'methods' as const,
+      'methods_names' as const /* frontend only */,
       'age_from' as const,
       'age_to' as const,
       'age' as const /* frontend only */,
@@ -884,7 +885,9 @@ export const RESOURCES = {
       'amount_from' as const,
       'amount_to' as const,
       'token_contract_address_hashes_to_include' as const,
+      'token_contract_symbols_to_include' as const /* frontend only */,
       'token_contract_address_hashes_to_exclude' as const,
+      'token_contract_symbols_to_exclude' as const /* frontend only */,
       'block_number' as const,
       'transaction_index' as const,
       'internal_transaction_index' as const,
