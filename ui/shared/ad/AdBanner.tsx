@@ -18,6 +18,7 @@ interface Props {
 }
 
 const AdBanner = ({ className, isLoading, platform }: Props) => {
+  return null;
   const provider = useAppContext().adBannerProvider;
 
   const hasAdblockCookie = cookies.get(cookies.NAMES.ADBLOCK_DETECTED, useAppContext().cookies);
@@ -30,7 +31,7 @@ const AdBanner = ({ className, isLoading, platform }: Props) => {
     <AdBannerContent
       className={ className }
       isLoading={ isLoading }
-      provider={ provider }
+      provider={ provider || 'none' }
       platform={ platform }
     />
   );

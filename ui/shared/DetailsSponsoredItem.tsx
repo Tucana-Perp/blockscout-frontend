@@ -14,6 +14,7 @@ interface Props {
 }
 
 const DetailsSponsoredItem = ({ isLoading }: Props) => {
+  return null;
   const isMobile = useIsMobile();
   const hasAdblockCookie = cookies.get(cookies.NAMES.ADBLOCK_DETECTED);
 
